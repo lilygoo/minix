@@ -36,10 +36,17 @@ export default function Home() {
 					</div>
 				)}
 
-				{/* Posts List */}
-				<div className="space-y-2">
-					<h2 className="text-xl font-semibold text-gray-800 mb-4">Latest Posts</h2>
-					<PostList />
+				{/* Posts Feed - Twitter Style */}
+				<div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+					{/* Feed Header */}
+					<div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
+						<h2 className="text-xl font-bold text-gray-900">Latest Posts</h2>
+					</div>
+					
+					{/* Posts Feed */}
+					<div className="divide-y divide-gray-100">
+						<PostList />
+					</div>
 				</div>
 			</div>
 		</div>
