@@ -33,7 +33,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.TEST1_KEY }}
         REMOTE_HOST: ${{ secrets.TEST1_HOST }}
         REMOTE_USER: ${{ secrets.TEST1_USER }}
-        #REMOTE_PORT: 22
+        #REMOTE_PORT: 22/80 both need to be configured on the server
         ARGS: "-avzL"
         SOURCE: "dist/"
         TARGET: "/server/www/firebase-demo"
