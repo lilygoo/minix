@@ -34,8 +34,9 @@ jobs:
         REMOTE_HOST: ${{ secrets.TEST1_HOST }}
         REMOTE_USER: ${{ secrets.TEST1_USER }}
         #REMOTE_PORT: 22/80 both need to be configured on the server
-        ARGS: "-avzL"
+        ARGS: "-avzL --delete  --verbose"
         SOURCE: "dist/"
         TARGET: "/server/www/firebase-demo"
-#        SCRIPT_AFTER: |
-
+        SCRIPT_BEFORE: |
+          mkdir -p /server/www/firebase-demo
+          chmod 755 /server/www/firebase-demo
