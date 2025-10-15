@@ -57,7 +57,7 @@ export default function PostForm({
 				<div>
 					<input 
 						className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-base" 
-						placeholder="标题" 
+						placeholder="Title" 
 						value={title} 
 						onChange={(e) => setTitle(e.target.value)} 
 					/>
@@ -87,7 +87,7 @@ export default function PostForm({
 								type="button"
 								onClick={() => onSaved?.()}
 							>
-								取消
+								Cancel
 							</button>
 						)}
 					</div>

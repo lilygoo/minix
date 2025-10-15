@@ -13,7 +13,7 @@ export default function PostList({ authorId }: { authorId?: string }) {
 	}, [authorId]);
 
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col gap-6">
 			{posts.map((p) => (
 				<PostCard key={p.id} post={p} />
 			))}
