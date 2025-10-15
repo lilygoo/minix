@@ -13,7 +13,7 @@ export default function PostList({ authorId }: { authorId?: string }) {
 	}, [authorId]);
 
 	return (
-		<div className="grid gap-4">
+		<div className="grid gap-6">
 			{posts.map((p) => (
 				<PostCard key={p.id} post={p} />
 			))}
