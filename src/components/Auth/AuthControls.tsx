@@ -1,29 +1,7 @@
-import type { FormEvent } from 'react';
-import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function AuthControls() {
-	const { user, loginWithEmail, registerWithEmail, loginWithGoogle, logout, loading } = useAuth();
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [mode, setMode] = useState<'login' | 'register'>('login');
-	const [error, setError] = useState<string | null>(null);
-
-	async function onSubmit(e: FormEvent) {
-		e.preventDefault();
-		setError(null);
-		try {
-			if (mode === 'login') {
-				await loginWithEmail(email, password);
-			} else {
-				await registerWithEmail(email, password);
-			}
-			setEmail('');
-			setPassword('');
-		} catch (err: any) {
-			setError(err?.message ?? 'Auth error');
-		}
-	}
+	const { user, logout, loading } = useAuth();
 
 	if (loading) return <div className="text-sm text-gray-500">Loading...</div>;
 
