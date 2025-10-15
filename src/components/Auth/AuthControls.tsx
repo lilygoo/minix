@@ -27,25 +27,13 @@ export default function AuthControls() {
 
 	if (loading) return <div className="text-sm text-gray-500">Loading...</div>;
 
+	// Only show user info in header when logged in
+	if (!user) return null;
+
 	return (
 		<div className="flex items-center gap-3">
-			{user ? (
-				<>
-					<span className="text-sm text-gray-600">{user.email}</span>
-					<button className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300" onClick={() => logout()}>Logout</button>
-				</>
-			) : (
-				<form onSubmit={onSubmit} className="flex items-center gap-2">
-					<input className="px-2 py-1 border rounded" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-					<input className="px-2 py-1 border rounded" placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-					<button className="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700" type="submit">{mode === 'login' ? 'Login' : 'Register'}</button>
-					<button className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300" type="button" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
-						{mode === 'login' ? 'Need account?' : 'Have account?'}
-					</button>
-					<button className="px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600" type="button" onClick={() => loginWithGoogle()}>Google</button>
-					{error && <span className="text-sm text-red-600">{error}</span>}
-				</form>
-			)}
+			<span className="text-sm text-gray-600">{user.email}</span>
+			<button className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium" onClick={() => logout()}>Logout</button>
 		</div>
 	);
 }

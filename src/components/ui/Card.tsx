@@ -4,7 +4,7 @@ export const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 	({ className = '', ...props }, ref) => (
 		<div
 			ref={ref}
-			className={`rounded-2xl border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 ${className}`}
+			className={`rounded-2xl border border-green-100 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 ${className}`}
 			{...props}
 		/>
 	)
@@ -59,7 +59,7 @@ export const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivEleme
 	({ className = '', ...props }, ref) => (
 		<div
 			ref={ref}
-			className={`flex items-center px-8 py-4 border-t border-gray-100 ${className}`}
+			className={`flex items-center px-8 py-4 border-t border-green-100 ${className}`}
 			{...props}
 		/>
 	)

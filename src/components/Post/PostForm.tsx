@@ -48,7 +48,7 @@ export default function PostForm({
 	return (
 		<form onSubmit={onSubmit} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
 			{/* Header */}
-			<div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100">
+			<div className="px-6 py-4 bg-gradient-to-r from-green-50 to-emerald-50 border-b border-gray-100">
 				<h3 className="text-lg font-semibold text-gray-900">{postId ? 'Edit Post' : 'Create New Post'}</h3>
 			</div>
 			
@@ -56,7 +56,7 @@ export default function PostForm({
 			<div className="p-6 space-y-4">
 				<div>
 					<input 
-						className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-base" 
+						className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-base" 
 						placeholder="Title" 
 						value={title} 
 						onChange={(e) => setTitle(e.target.value)} 
@@ -64,7 +64,7 @@ export default function PostForm({
 				</div>
 				<div>
 					<textarea 
-						className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-base resize-none" 
+						className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-base resize-none" 
 						placeholder="Share your thoughts..." 
 						rows={4} 
 						value={content} 
@@ -76,7 +76,7 @@ export default function PostForm({
 				<div className="flex items-center justify-between pt-2">
 					<div className="flex items-center gap-3">
 						<button 
-							className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg" 
+							className="px-6 py-3 rounded-lg bg-green-600 text-white font-medium hover:bg-green-700 transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg" 
 							type="submit"
 						>
 							{postId ? 'Update' : 'Create'}

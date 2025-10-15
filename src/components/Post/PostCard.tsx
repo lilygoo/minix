@@ -23,17 +23,23 @@ export default function PostCard({ post }: { post: any }) {
 	return (
 		<Card className="group">
 			<CardHeader>
-				<CardTitle className="group-hover:text-blue-600 transition-colors duration-200">
+				<CardTitle className="group-hover:text-green-600 transition-colors duration-200">
 					{post.title}
 				</CardTitle>
 				<CardDescription className="flex items-center gap-2">
 					<span>Author:</span>
-					<Link 
-						className="text-blue-600 hover:text-blue-800 font-medium hover:underline transition-colors duration-200" 
-						to={`/author/${post.authorId}`}
-					>
-						{post.authorId}
-					</Link>
+					{user ? (
+						<Link 
+							className="text-green-600 hover:text-green-800 font-medium hover:underline transition-colors duration-200" 
+							to={`/author/${post.authorId}`}
+						>
+							{post.authorId}
+						</Link>
+					) : (
+						<span className="text-gray-600 font-medium">
+							{post.authorId}
+						</span>
+					)}
 					<span>•</span>
 					<span className="whitespace-nowrap">
 						{post.createdAt?.toDate ? post.createdAt.toDate().toLocaleString() : ''}
@@ -50,7 +56,7 @@ export default function PostCard({ post }: { post: any }) {
 			{isOwner && (
 				<CardFooter className="gap-3">
 					<button 
-						className="px-4 py-2 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 font-medium transition-all duration-200 text-sm shadow-sm hover:shadow-md" 
+						className="px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 font-medium transition-all duration-200 text-sm shadow-sm hover:shadow-md" 
 						onClick={() => setEditing(true)}
 					>
 						Edit
